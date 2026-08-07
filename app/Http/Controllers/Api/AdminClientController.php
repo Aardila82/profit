@@ -29,6 +29,7 @@ class AdminClientController extends Controller
 
         $messages = [
             'email.unique' => 'Este correo electrónico ya está registrado. Por favor usa otro.',
+            'cedula.unique' => 'Esta cédula ya se encuentra registrada en el sistema.',
             'required' => 'El campo :attribute es obligatorio.',
             'fecha_vencimiento.after_or_equal' => 'La fecha de vencimiento debe ser igual o posterior a la fecha de inicio.',
             'numeric' => 'El campo :attribute debe ser un número válido.',
@@ -50,7 +51,8 @@ class AdminClientController extends Controller
             'altura' => 'nullable|numeric',
             'genero' => 'nullable|string',
             'objetivo' => 'nullable|string',
-            'lesiones' => 'nullable|string'
+            'lesiones' => 'nullable|string',
+            'antropometria' => 'nullable|array'
         ], $messages);
 
         // Generate username and password
@@ -75,7 +77,8 @@ class AdminClientController extends Controller
             'genero' => $request->genero,
             'objetivo' => $request->objetivo,
             'lesiones' => $request->lesiones,
-            'created_by_id' => $request->user()->id,
+            'antropometria' => $request->antropometria,
+            'created_by_id' => $request->user()->id
         ]);
 
         return response()->json([
@@ -95,6 +98,7 @@ class AdminClientController extends Controller
 
         $messages = [
             'email.unique' => 'Este correo electrónico ya está registrado. Por favor usa otro.',
+            'cedula.unique' => 'Esta cédula ya se encuentra registrada en el sistema.',
             'required' => 'El campo :attribute es obligatorio.',
             'fecha_vencimiento.after_or_equal' => 'La fecha de vencimiento debe ser igual o posterior a la fecha de inicio.',
             'numeric' => 'El campo :attribute debe ser un número válido.',
@@ -116,7 +120,8 @@ class AdminClientController extends Controller
             'altura' => 'nullable|numeric',
             'genero' => 'nullable|string',
             'objetivo' => 'nullable|string',
-            'lesiones' => 'nullable|string'
+            'lesiones' => 'nullable|string',
+            'antropometria' => 'nullable|array'
         ], $messages);
 
         $client = User::findOrFail($id);
@@ -136,6 +141,7 @@ class AdminClientController extends Controller
             'genero' => $request->genero,
             'objetivo' => $request->objetivo,
             'lesiones' => $request->lesiones,
+            'antropometria' => $request->antropometria
         ]);
 
         return response()->json([

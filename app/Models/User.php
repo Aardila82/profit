@@ -34,6 +34,7 @@ class User extends Authenticatable
         'genero',
         'objetivo',
         'lesiones',
+        'antropometria',
         'created_by_id'
     ];
 
@@ -59,6 +60,7 @@ class User extends Authenticatable
             'password' => 'hashed',
             'must_change_password' => 'boolean',
             'fecha_vencimiento' => 'date',
+            'antropometria' => 'array',
         ];
     }
 
