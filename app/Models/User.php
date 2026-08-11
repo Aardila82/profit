@@ -34,6 +34,7 @@ class User extends Authenticatable
         'genero',
         'objetivo',
         'lesiones',
+        'nivel_entrenamiento',
         'antropometria',
         'created_by_id'
     ];

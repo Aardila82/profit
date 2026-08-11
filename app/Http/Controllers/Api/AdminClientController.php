@@ -52,6 +52,7 @@ class AdminClientController extends Controller
             'genero' => 'nullable|string',
             'objetivo' => 'nullable|string',
             'lesiones' => 'nullable|string',
+            'nivel_entrenamiento' => 'nullable|string',
             'antropometria' => 'nullable|array'
         ], $messages);
 
@@ -77,6 +78,7 @@ class AdminClientController extends Controller
             'genero' => $request->genero,
             'objetivo' => $request->objetivo,
             'lesiones' => $request->lesiones,
+            'nivel_entrenamiento' => $request->nivel_entrenamiento,
             'antropometria' => $request->antropometria,
             'created_by_id' => $request->user()->id
         ]);
@@ -121,6 +123,7 @@ class AdminClientController extends Controller
             'genero' => 'nullable|string',
             'objetivo' => 'nullable|string',
             'lesiones' => 'nullable|string',
+            'nivel_entrenamiento' => 'nullable|string',
             'antropometria' => 'nullable|array'
         ], $messages);
 
@@ -141,6 +144,7 @@ class AdminClientController extends Controller
             'genero' => $request->genero,
             'objetivo' => $request->objetivo,
             'lesiones' => $request->lesiones,
+            'nivel_entrenamiento' => $request->nivel_entrenamiento,
             'antropometria' => $request->antropometria
         ]);
 
