@@ -69,4 +69,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo(User::class, 'created_by_id');
     }
+
+    public function rutinas_historial()
+    {
+        return $this->hasMany(UserRutina::class)->orderBy('assigned_at', 'desc');
+    }
+
+    public function rutina_actual()
+    {
+        return $this->hasOne(UserRutina::class)->where('estado', 'actual');
+    }
 }

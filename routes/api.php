@@ -16,11 +16,14 @@ Route::post('/reset-password', [PasswordResetController::class, 'resetPassword']
 Route::get('/plans', [PlanController::class, 'index']);
 
 // Rutas Protegidas
+Route::get('/videos/{filename}', [\App\Http\Controllers\API\RutinaController::class, 'streamVideo'])->where('filename', '.*');
+
 Route::middleware('auth:sanctum')->group(function () {
     // Rutas de Admin
     Route::get('/admin/clientes', [AdminClientController::class, 'index']);
     Route::post('/admin/clientes', [AdminClientController::class, 'store']);
     Route::put('/admin/clientes/{id}', [AdminClientController::class, 'update']);
+    Route::post('/admin/clientes/{id}/rutina/change', [\App\Http\Controllers\API\RutinaController::class, 'changeForClient']);
     
     Route::put('/admin/plans/{id}', [PlanController::class, 'updatePlan']);
     Route::put('/admin/settings', [PlanController::class, 'updateSetting']);
@@ -28,4 +31,6 @@ Route::middleware('auth:sanctum')->group(function () {
     // Rutas de Cliente
     Route::get('/cliente/perfil', [ClientProfileController::class, 'show']);
     Route::post('/cliente/change-password', [AuthController::class, 'changePassword']);
+    Route::get('/client/rutinas/current', [\App\Http\Controllers\API\RutinaController::class, 'current']);
+    Route::post('/client/rutinas/change', [\App\Http\Controllers\API\RutinaController::class, 'change']);
 });
