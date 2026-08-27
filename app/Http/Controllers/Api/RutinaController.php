@@ -105,7 +105,8 @@ class RutinaController extends Controller
         
         return response()->file($path, [
             'Content-Type' => 'video/mp4',
-            'Cache-Control' => 'no-cache, no-store, must-revalidate',
+            'Cache-Control' => 'private, max-age=604800', // Cache por 7 días
+            'Accept-Ranges' => 'bytes',
         ]);
     }
 

@@ -48,6 +48,49 @@ class RutinaSeeder extends Seeder
                     ['id' => 21, 'day' => 'DÍA 3: PIERNA/BICEPS', 'title' => 'Mancuerna Inclinado (Biceps)', 'duration' => '2 x 12', 'filename' => 'hombre/avanzado/aumento_masa/rutina1/dia3/biceps/inclinado_mancuerna.mp4'],
                 ]
             ],
+            // Rutina 2 - Hombre + Avanzado + Aumento de masa muscular
+            [
+                'nombre' => 'Rutina 2 - Masa Avanzado', 
+                'genero' => 'Masculino', 
+                'nivel_entrenamiento' => 'Avanzado', 
+                'objetivo' => 'Aumento masa', 
+                'videos' => [
+                    // DÍA 1
+                    ['id' => 43, 'day' => 'DÍA 1 ESPALDA - PECHO', 'title' => 'Inclinado barra (Pecho)', 'duration' => '4 x 10', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia1/pecho/inclinado_barra.mp4'],
+                    ['id' => 44, 'day' => 'DÍA 1 ESPALDA - PECHO', 'title' => 'Plano mancuerna (Pecho)', 'duration' => '4 x 10', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia1/pecho/plano_mancuerna.mp4'],
+                    ['id' => 45, 'day' => 'DÍA 1 ESPALDA - PECHO', 'title' => 'Fondos (Pecho)', 'duration' => '4 x 8', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia1/pecho/fondos.mp4'],
+                    ['id' => 46, 'day' => 'DÍA 1 ESPALDA - PECHO', 'title' => 'Dominadas abierto (Espalda)', 'duration' => '4 x 8', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia1/espalda/dominadas_abierto.mp4'],
+                    ['id' => 47, 'day' => 'DÍA 1 ESPALDA - PECHO', 'title' => 'Remo mancuerna (Espalda)', 'duration' => '4 x 10', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia1/espalda/remo_mancuerna.mp4'],
+                    ['id' => 48, 'day' => 'DÍA 1 ESPALDA - PECHO', 'title' => 'Remo máquina (Espalda)', 'duration' => '4 x 12', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia1/espalda/remo_maquina.mp4'],
+
+                    // DÍA 2
+                    ['id' => 22, 'day' => 'DÍA 2 CUADRICEPS - TRICEPS', 'title' => 'Leg Extension (Cuadriceps)', 'duration' => '4x4-5-6 desendente', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia2/cuadriceps/leg_extension.mp4'],
+                    ['id' => 23, 'day' => 'DÍA 2 CUADRICEPS - TRICEPS', 'title' => 'Prensa (Cuadriceps)', 'duration' => '4 x 12', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia2/cuadriceps/prensa.mp4'],
+                    ['id' => 24, 'day' => 'DÍA 2 CUADRICEPS - TRICEPS', 'title' => 'Sentadilla sissy (Cuadriceps)', 'duration' => '4 x 15', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia2/cuadriceps/sentadilla_sissy.mp4'],
+                    ['id' => 25, 'day' => 'DÍA 2 CUADRICEPS - TRICEPS', 'title' => 'Extensión polea lazo (Triceps)', 'duration' => '4 x 12', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia2/triceps/ext_polea_lazo.mp4'],
+                    ['id' => 26, 'day' => 'DÍA 2 CUADRICEPS - TRICEPS', 'title' => 'Copa (Triceps)', 'duration' => '4 x 10', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia2/triceps/copa.mp4'],
+                    ['id' => 27, 'day' => 'DÍA 2 CUADRICEPS - TRICEPS', 'title' => 'Press francés (Triceps)', 'duration' => '4 x 12', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia2/triceps/press_frances.mp4'],
+                    ['id' => 28, 'day' => 'DÍA 2 CUADRICEPS - TRICEPS', 'title' => 'Pantorrilla de pie (Pantorrilla)', 'duration' => '4 x 15', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia2/pantorrilla/pantorrilla_de_pie.mp4'],
+
+                    // DÍA 3
+                    ['id' => 29, 'day' => 'DÍA 3 HOMBRO - TRAPECIO - ANTEBRAZOS', 'title' => 'Press mancuerna (Hombro)', 'duration' => '3 x 15', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia3/hombro/press_mancuerna.mp4'],
+                    ['id' => 30, 'day' => 'DÍA 3 HOMBRO - TRAPECIO - ANTEBRAZOS', 'title' => 'Elevación lateral mancuerna (Hombro)', 'duration' => '4 x 12', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia3/hombro/elevacion_lateral_mancuerna.mp4'],
+                    ['id' => 31, 'day' => 'DÍA 3 HOMBRO - TRAPECIO - ANTEBRAZOS', 'title' => 'Elevación frontal polea (Hombro)', 'duration' => '4 x 10', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia3/hombro/elevacion_frontal_polea.mp4'],
+                    ['id' => 32, 'day' => 'DÍA 3 HOMBRO - TRAPECIO - ANTEBRAZOS', 'title' => 'Vuelos posteriores máquina (Hombro)', 'duration' => '3 x 15', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia3/hombro/vuelos_posteriores_maquina.mp4'],
+                    ['id' => 33, 'day' => 'DÍA 3 HOMBRO - TRAPECIO - ANTEBRAZOS', 'title' => 'Encogimiento de hombros (Trapecio)', 'duration' => '4 x 20', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia3/trapecio/encogimiento_hombros.mp4'],
+                    ['id' => 34, 'day' => 'DÍA 3 HOMBRO - TRAPECIO - ANTEBRAZOS', 'title' => 'Antebrazo prono', 'duration' => '4 x 15', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia3/antebrazo/antebrazo_prono.mp4'],
+                    ['id' => 35, 'day' => 'DÍA 3 HOMBRO - TRAPECIO - ANTEBRAZOS', 'title' => 'Antebrazo supino', 'duration' => '4 x 15', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia3/antebrazo/antebrazo_supino.mp4'],
+
+                    // DÍA 4
+                    ['id' => 36, 'day' => 'DÍA 4 ISQUISURALES - BICEPS', 'title' => 'Leg curl sentado (Isquiosurales)', 'duration' => '4 x 15', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia4/isquisurales/leg_curl_sentado.mp4'],
+                    ['id' => 37, 'day' => 'DÍA 4 ISQUISURALES - BICEPS', 'title' => 'Peso muerto (Isquiosurales)', 'duration' => '4 x 12', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia4/isquisurales/peso_muerto.mp4'],
+                    ['id' => 38, 'day' => 'DÍA 4 ISQUISURALES - BICEPS', 'title' => 'Leg curl acostado (Isquiosurales)', 'duration' => '3 x 12', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia4/isquisurales/leg_curl_acostado.mp4'],
+                    ['id' => 39, 'day' => 'DÍA 4 ISQUISURALES - BICEPS', 'title' => 'Sentadilla búlgara (Isquiosurales)', 'duration' => '3 x 15', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia4/isquisurales/sentadilla_bulgara.mp4'],
+                    ['id' => 40, 'day' => 'DÍA 4 ISQUISURALES - BICEPS', 'title' => 'Curl alterno mancuerna (Biceps)', 'duration' => '4 x 8', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia4/biceps/curl_alterno_mancuerna.mp4'],
+                    ['id' => 41, 'day' => 'DÍA 4 ISQUISURALES - BICEPS', 'title' => 'Predicador (Biceps)', 'duration' => '4 x 10', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia4/biceps/predicador.mp4'],
+                    ['id' => 42, 'day' => 'DÍA 4 ISQUISURALES - BICEPS', 'title' => 'Martillo lazo polea (Biceps)', 'duration' => '3 x 15', 'filename' => 'hombre/avanzado/aumento_masa/rutina2/dia4/biceps/martillo_lazo_polea.mp4'],
+                ]
+            ],
             // Mujer + Principiante + Bajar de peso (2 variantes para el seeder)
             ['nombre' => 'Rutina Quema Grasa Principiante A', 'genero' => 'Femenino', 'nivel_entrenamiento' => 'Principiante', 'objetivo' => 'Bajar de peso', 'videos' => [['id' => 22, 'day' => 'General', 'title' => 'Cardio HIIT Suave', 'duration' => '20 min', 'filename' => 'cardio.mp4']]],
             ['nombre' => 'Rutina Quema Grasa Principiante B', 'genero' => 'Femenino', 'nivel_entrenamiento' => 'Principiante', 'objetivo' => 'Bajar de peso', 'videos' => [['id' => 23, 'day' => 'General', 'title' => 'Circuito Máquinas Básicas', 'duration' => '25 min', 'filename' => 'circuito.mp4']]],
@@ -57,7 +100,10 @@ class RutinaSeeder extends Seeder
         ];
 
         foreach ($rutinas as $r) {
-            \App\Models\Rutina::create($r);
+            \App\Models\Rutina::updateOrCreate(
+                ['nombre' => $r['nombre']], // Busca por nombre
+                $r // Si existe lo actualiza, si no lo crea
+            );
         }
     }
 }
