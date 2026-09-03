@@ -130,7 +130,16 @@ class RutinaController extends Controller
         }
         if ($user->objetivo) {
             $query->where(function($q) use ($user) {
-                $q->where('objetivo', $user->objetivo)->orWhereNull('objetivo');
+                $obj = strtolower($user->objetivo);
+                if (str_contains($obj, 'tono') || str_contains($obj, 'tonifica')) {
+                    $q->where('objetivo', 'like', '%Tono%')->orWhereNull('objetivo');
+                } elseif (str_contains($obj, 'masa')) {
+                    $q->where('objetivo', 'like', '%Masa%')->orWhereNull('objetivo');
+                } elseif (str_contains($obj, 'peso')) {
+                    $q->where('objetivo', 'like', '%Peso%')->orWhereNull('objetivo');
+                } else {
+                    $q->where('objetivo', $user->objetivo)->orWhereNull('objetivo');
+                }
             });
         }
 
