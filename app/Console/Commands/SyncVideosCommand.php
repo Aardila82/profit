@@ -19,33 +19,33 @@ class SyncVideosCommand extends Command
     public function handle()
     {
         $this->info('Iniciando sincronización automática de videos...');
-        $baseDir = 'videos';
+        $baseDir = storage_path('app/videos');
 
-        if (!Storage::disk('local')->exists($baseDir)) {
-            $this->error("La carpeta storage/app/{$baseDir} no existe.");
+        if (!\Illuminate\Support\Facades\File::exists($baseDir)) {
+            $this->error("La carpeta {$baseDir} no existe.");
             return;
         }
 
         // 1. Nivel de Género (hombre / mujer)
-        $generos = Storage::disk('local')->directories($baseDir);
+        $generos = \Illuminate\Support\Facades\File::directories($baseDir);
         foreach ($generos as $generoDir) {
             $genero = basename($generoDir); 
             $generoStr = $genero === 'hombre' ? 'Masculino' : 'Femenino';
 
             // 2. Nivel de Entrenamiento (avanzado / principiante)
-            $niveles = Storage::disk('local')->directories($generoDir);
+            $niveles = \Illuminate\Support\Facades\File::directories($generoDir);
             foreach ($niveles as $nivelDir) {
                 $nivel = basename($nivelDir);
                 $nivelStr = ucfirst($nivel);
 
                 // 3. Objetivo (aumento_masa / tono)
-                $objetivos = Storage::disk('local')->directories($nivelDir);
+                $objetivos = \Illuminate\Support\Facades\File::directories($nivelDir);
                 foreach ($objetivos as $objetivoDir) {
                     $objetivo = basename($objetivoDir);
                     $objetivoStr = Str::title(str_replace('_', ' ', $objetivo));
 
                     // 4. Rutinas (rutina1, rutina2, etc.)
-                    $rutinas = Storage::disk('local')->directories($objetivoDir);
+                    $rutinas = \Illuminate\Support\Facades\File::directories($objetivoDir);
                     foreach ($rutinas as $rutinaDir) {
                         $rutina = basename($rutinaDir); // rutina1
                         $rutinaNum = str_replace('rutina', '', $rutina);
@@ -54,13 +54,13 @@ class SyncVideosCommand extends Command
                         $videosArray = [];
 
                         // 5. Días (dia1, dia2, etc.)
-                        $dias = Storage::disk('local')->directories($rutinaDir);
+                        $dias = \Illuminate\Support\Facades\File::directories($rutinaDir);
                         foreach ($dias as $diaDir) {
                             $dia = basename($diaDir); // dia1
                             $diaNum = str_replace('dia', '', $dia);
 
                             // 6. Músculos (pecho, espalda, etc.)
-                            $musculos = Storage::disk('local')->directories($diaDir);
+                            $musculos = \Illuminate\Support\Facades\File::directories($diaDir);
                             $musculosNombres = array_map(function($m) {
                                 return strtoupper(basename($m));
                             }, $musculos);
@@ -71,16 +71,19 @@ class SyncVideosCommand extends Command
 
                             foreach ($musculos as $musculoDir) {
                                 // 7. Videos (.mp4)
-                                $archivos = Storage::disk('local')->files($musculoDir);
+                                $archivos = \Illuminate\Support\Facades\File::files($musculoDir);
                                 
-                                foreach ($archivos as $archivo) {
+                                foreach ($archivos as $archivoInfo) {
+                                    $archivo = $archivoInfo->getPathname();
                                     if (Str::endsWith(strtolower($archivo), '.mp4')) {
                                         $filename = basename($archivo, '.mp4');
                                         // Limpia el nombre del video (ej. press_maquina -> Press Maquina)
                                         $title = Str::title(str_replace('_', ' ', $filename));
                                         
-                                        // Quitar el 'videos/' del principio de la ruta
-                                        $rutaRelativa = Str::after($archivo, 'videos/');
+                                        // Asegurar que use slash (/) y no backslash (\)
+                                        $archivoNormalized = str_replace('\\', '/', $archivo);
+                                        // Quitar todo hasta llegar a 'hombre/' o 'mujer/'
+                                        $rutaRelativa = Str::after($archivoNormalized, 'videos/');
 
                                         $videosArray[] = [
                                             'id' => uniqid(), 
